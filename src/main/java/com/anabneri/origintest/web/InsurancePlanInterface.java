@@ -5,7 +5,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public class InsurancePlanInterface {
 
-    @RequestBody(UserRiskProfileDTO userRiskProfileDTO)
-    public void insurancePlan();
 
 }

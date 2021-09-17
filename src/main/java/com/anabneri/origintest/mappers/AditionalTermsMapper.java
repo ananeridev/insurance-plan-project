@@ -1,22 +1,21 @@
-package com.anabneri.origintest.validations;
+package com.anabneri.origintest.mappers;
 
-import com.anabneri.origintest.converter.RiskProfileConverter;
 import com.anabneri.origintest.domain.MaritalStatus;
 import com.anabneri.origintest.domain.OwnershipStatus;
 import com.anabneri.origintest.model.UserRiskProfile;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
-public class AditionalTermsValidations {
+public class AditionalTermsMapper {
 
     @Autowired
     private UserRiskProfile userRiskProfile;
 
-    public void validateUserRiskProfileAditional(RiskProfileConverter userRiskProfile) {
-        // conditions should be here
+    public void mapUserRiskProfileAditional(UserRiskProfile userRiskProfile) {
         validateVehicleConditions(userRiskProfile);
         validateMaritalConditions(userRiskProfile);
         validateDependentsOfUSerConditions(userRiskProfile);
@@ -25,6 +24,7 @@ public class AditionalTermsValidations {
     }
 
     private void validateVehicleConditions(UserRiskProfile userRiskProfile) {
+        this.userRiskProfile = userRiskProfile;
         if(this.userRiskProfile.vehicle != null) {
             if(this.userRiskProfile.vehicle.year > LocalDate.now().getYear() - 5) {
                 this.userRiskProfile.autoScore +=1;

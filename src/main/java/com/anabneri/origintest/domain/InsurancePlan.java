@@ -1,18 +1,23 @@
 package com.anabneri.origintest.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum InsurancePlan {
 
-    INELIGIBLE,
-    ECONOMIC,
-    REGULAR,
-    RESPONSIBLE;
+    INELIGIBLE("ineligible"),
+    ECONOMIC("economic"),
+    REGULAR("regular"),
+    RESPONSIBLE("responsible");
 
-    public static InsurancePlan fromValue(String value) {
-        for (InsurancePlan insurancePlan : InsurancePlan.values()) {
-            if (insurancePlan.toString().equals(value))
-                return insurancePlan;
-        }
-        return null;
+
+    private final String insurancePlanString;
+
+    private InsurancePlan(String insurancePlanString) {
+        this.insurancePlanString = insurancePlanString;
     }
 
+    @Override
+    public String toString() {
+        return insurancePlanString;
+    }
 }

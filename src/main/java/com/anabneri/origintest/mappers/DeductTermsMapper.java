@@ -1,13 +1,12 @@
-package com.anabneri.origintest.validations;
+package com.anabneri.origintest.mappers;
 
-import com.anabneri.origintest.converter.RiskProfileConverter;
 import com.anabneri.origintest.model.UserRiskProfile;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeductTermsValidations {
+public class DeductTermsMapper {
 
-    public void validateUserRiskProfileDeduct(RiskProfileConverter userRiskProfile) {
+    public void mapUserRiskProfileDeduct(UserRiskProfile userRiskProfile) {
         // conditions should be here
         incomeMajorThanTwoHundredThousand(userRiskProfile);
         userUnderOfThirtyYearsOld(userRiskProfile);

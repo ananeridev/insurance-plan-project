@@ -1,13 +1,12 @@
-package com.anabneri.origintest.validations;
+package com.anabneri.origintest.mappers;
 
-import com.anabneri.origintest.converter.RiskProfileConverter;
 import com.anabneri.origintest.model.UserRiskProfile;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NoEligibilityTermsValidations {
+public class NoEligibilityTermsMapper {
 
-    public void validateUserRiskProfileNoEligibility(RiskProfileConverter userRiskProfile) {
+    public void userRiskProfileNoEligibility(UserRiskProfile userRiskProfile) {
         if (userRiskProfile.income == 0) {
             userRiskProfile.disabilityScore = Integer.MIN_VALUE;
 

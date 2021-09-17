@@ -1,17 +1,20 @@
 package com.anabneri.origintest.converter;
 
 import com.anabneri.origintest.domain.InsurancePlan;
-import com.anabneri.origintest.dto.RiskScoreDTO;
+import com.anabneri.origintest.dto.RiskScoreResponseDTO;
 import com.anabneri.origintest.model.UserRiskProfile;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Converter;
-
+@Data
+@AllArgsConstructor
 @Component
-public abstract class RiskProfileConverter  {
+public class RiskProfileConverter  {
 
-    public RiskScoreDTO convert (final UserRiskProfile userRiskProfile) {
-        return RiskScoreDTO.builder()
+    public RiskScoreResponseDTO convert(final UserRiskProfile userRiskProfile) {
+        return RiskScoreResponseDTO.builder()
             .auto(mappingScorePoints(userRiskProfile.autoScore))
             .disability(mappingScorePoints(userRiskProfile.disabilityScore))
             .home(mappingScorePoints(userRiskProfile.homeScore))
@@ -21,12 +24,12 @@ public abstract class RiskProfileConverter  {
 
     private String mappingScorePoints(Integer score) {
         if (score == Integer.MIN_VALUE)
-            return InsurancePlan.INELIGIBLE.name();
+            return InsurancePlan.INELIGIBLE.toString();
         if (score <= 0)
-            return InsurancePlan.ECONOMIC.name();
+            return InsurancePlan.ECONOMIC.toString();
         if (score == 1 || score == 2)
-            return InsurancePlan.REGULAR.name();
-        return InsurancePlan.RESPONSIBLE.name();
+            return InsurancePlan.REGULAR.toString();
+        return InsurancePlan.RESPONSIBLE.toString();
     }
 
 }
