@@ -24,10 +24,9 @@ public class AditionalTermsMapper {
     }
 
     private void validateVehicleConditions(UserRiskProfile userRiskProfile) {
-        this.userRiskProfile = userRiskProfile;
-        if(this.userRiskProfile.vehicle != null) {
-            if(this.userRiskProfile.vehicle.year > LocalDate.now().getYear() - 5) {
-                this.userRiskProfile.autoScore +=1;
+        if(userRiskProfile.vehicle != null) {
+            if(userRiskProfile.vehicle.year > LocalDate.now().getYear() - 5) {
+                userRiskProfile.autoScore +=1;
             }
         }
     }

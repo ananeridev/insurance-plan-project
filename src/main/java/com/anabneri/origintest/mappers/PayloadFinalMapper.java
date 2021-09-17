@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class PayloadFinalValidations {
+public class PayloadFinalMapper {
 
 
     public List<String> validateRiskProfileToPayloadFromDTO(UserRiskProfileDTO userRiskProfileDTO) {

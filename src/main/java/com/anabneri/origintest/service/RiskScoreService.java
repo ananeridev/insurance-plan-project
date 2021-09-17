@@ -8,7 +8,7 @@ import com.anabneri.origintest.model.UserRiskProfile;
 import com.anabneri.origintest.mappers.AditionalTermsMapper;
 import com.anabneri.origintest.mappers.DeductTermsMapper;
 import com.anabneri.origintest.mappers.NoEligibilityTermsMapper;
-import com.anabneri.origintest.mappers.PayloadFinalValidations;
+import com.anabneri.origintest.mappers.PayloadFinalMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class RiskScoreService {
 
     @Autowired
-    public PayloadFinalValidations payloadFinalValidations;
+    public PayloadFinalMapper payloadFinalMapper;
 
     @Autowired
     public NoEligibilityTermsMapper noEligibilityTermsValidations;

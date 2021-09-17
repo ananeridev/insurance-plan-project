@@ -1,7 +1,5 @@
 package com.anabneri.origintest.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public enum InsurancePlan {
 
     INELIGIBLE("ineligible"),

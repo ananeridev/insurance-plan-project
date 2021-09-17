@@ -2,8 +2,16 @@ package com.anabneri.origintest.dto;
 
 import com.anabneri.origintest.domain.MaritalStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ser.std.StdArraySerializers;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 public class UserRiskProfileDTO {
 
     public Integer age;
