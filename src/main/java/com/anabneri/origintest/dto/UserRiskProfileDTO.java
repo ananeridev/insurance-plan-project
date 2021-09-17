@@ -4,22 +4,22 @@ import com.anabneri.origintest.domain.MaritalStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ser.std.StdArraySerializers;
 
-public class UserRiskPRofileDTO {
+public class UserRiskProfileDTO {
 
-    private Integer age;
+    public Integer age;
 
-    private Integer dependents;
+    public Integer dependents;
 
-    private HouseDTO house;
+    public HouseDTO house;
 
-    private Integer income;
+    public Integer income;
 
     @JsonProperty("marital_status")
-    private MaritalStatus maritalStatus;
+    public MaritalStatus maritalStatus;
 
     @JsonProperty("risk_questions")
-    private int[] riskQuestions;
+    public int[] riskQuestions;
 
-    private VehicleYearDTO vehicle;
+    public VehicleYearDTO vehicle;
 
 }

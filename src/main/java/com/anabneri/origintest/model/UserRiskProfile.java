@@ -3,7 +3,15 @@ package com.anabneri.origintest.model;
 import com.anabneri.origintest.domain.MaritalStatus;
 import com.anabneri.origintest.dto.HouseDTO;
 import com.anabneri.origintest.dto.VehicleYearDTO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class UserRiskProfile {
 
     public Integer age;
